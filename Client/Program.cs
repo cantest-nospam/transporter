@@ -31,7 +31,7 @@ using var channel = GrpcChannel.ForAddress("http://localhost", new GrpcChannelOp
     HttpHandler = CreateHttpHandler(socketPath)
 });
 var client = new Greeter.GreeterClient(channel);
-System.Threading.Thread.Sleep(3999);
+System.Threading.Thread.Sleep(9999);
 
 var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
 Console.WriteLine("Greeting: " + reply.Message);
