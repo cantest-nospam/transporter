@@ -22,12 +22,14 @@ jobs:
       with:
         dotnet-version: |
           7.0.x
+    - name: Install background
+      run: dotnet tool install --global DotnetBackground
     - name: Restore dependencies
       run: dotnet restore Server/
     - name: Build Test
       run: dotnet build Server/ --no-restore
     - name: Test (I:Debug T:Debug R:false)
-      run: dotnet run --verbosity normal --project Server/Server.csproj --no-build Server/Debug/net7.0/Server.dll 
+      run: dotnetbackground run --verbosity normal --project Server/Server.csproj --no-build Server/Debug/net7.0/Server.dll 
     - name: Restore dependencies 2
       run: dotnet restore Client/
     - name: Build Test 2
