@@ -28,23 +28,9 @@ jobs:
       run: dotnet build Server/ --no-restore
     - name: Test (I:Debug T:Debug R:false)
       run: dotnet run --verbosity normal --project Server/Server.csproj --no-build Server/Debug/net7.0/Server.dll 
-
-  build2:
-
-    runs-on: ubuntu-latest
-    steps:
-
-    - uses: actions/checkout@v2
-      with:
-        ref: main
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: |
-          7.0.x
-    - name: Restore dependencies
+    - name: Restore dependencies 2
       run: dotnet restore Client/
-    - name: Build Test
+    - name: Build Test 2
       run: dotnet build Client/ --no-restore
-    - name: Test (I:Debug T:Debug R:false)
+    - name: Test (I:Debug T:Debug R:false) 2
       run: dotnet run --verbosity normal --project Client/Client.csproj --no-build Client/Debug/net7.0/Client.dll 
