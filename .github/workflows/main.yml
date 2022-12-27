@@ -25,7 +25,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Server/
     - name: Build Test
-      run: dotnet build TestApp/ --no-restore
+      run: dotnet build Server/ --no-restore
     - name: Test (I:Debug T:Debug R:false)
       run: dotnet run --verbosity normal --project Server/Server.csproj --no-build Server/Debug/net7.0/Server.dll 
 
