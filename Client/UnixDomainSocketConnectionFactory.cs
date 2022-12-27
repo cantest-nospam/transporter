@@ -56,7 +56,6 @@ namespace Client
 
         public async ValueTask<Stream> PlaintextFilter(SocketsHttpPlaintextStreamFilterContext dor, CancellationToken cancellationToken = default)
         {
-            dor.PlaintextStream.Close();
             return dor.PlaintextStream;
         }
     }
