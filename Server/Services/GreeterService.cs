@@ -35,6 +35,7 @@ namespace Server
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
             _logger.LogInformation($"Sending hello to {request.Name}");
+            Task.Delay(2000);
             return Task.FromResult(new HelloReply { Message = "Hello " + request.Name + "lol"});
         }
     }
