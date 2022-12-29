@@ -33,4 +33,10 @@ jobs:
     - name: Build Test 2
       run: dotnet build Client/ --no-restore
     - name: Test (I:Debug T:Debug R:false) 2
-      run: dotnet run --verbosity normal --project Client/Client.csproj --no-build Client/Debug/net7.0/Client.dll 
+      run: dotnet run --verbosity normal --project Client/Client.csproj --no-build Client/Debug/net7.0/Client.dll
+    - name: Restore dependencies 3
+      run: dotnet restore Client2/
+    - name: Build Test 3
+      run: dotnet build Client2/ --no-restore
+    - name: Test (I:Debug T:Debug R:false) 3
+      run: dotnet run --verbosity normal --project Client2/Client.csproj --no-build Client2/Debug/net7.0/Client.dll 
