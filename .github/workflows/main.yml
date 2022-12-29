@@ -39,4 +39,4 @@ jobs:
     - name: Build Test 3
       run: dotnet build Client2/ --no-restore
     - name: Test (I:Debug T:Debug R:false) 3
-      run: dotnet run --verbosity normal --project Client2/Client.csproj --no-build Client2/Debug/net7.0/Client.dll 
+      run: dotnet run --verbosity normal --project Client2/Client2.csproj --no-build Client2/Debug/net7.0/Client2.dll 
