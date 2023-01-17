@@ -4,14 +4,17 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '10,20,30,40,50 * * * *' # run every day at 16:20 UTC / 8:20 PST
-    
+
 concurrency:
   group: ${{ github.workflow }}
 
 jobs:
   build1:
+  
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
 
     - uses: actions/checkout@v2
